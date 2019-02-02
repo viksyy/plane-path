@@ -6,7 +6,7 @@ export const ROUTES: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'welcome',
+        redirectTo: 'home',
         pathMatch: 'full'
       },
       {

@@ -1,0 +1,40 @@
+.button, button {
+    padding: 1rem 0;
+    margin: auto;
+    cursor: pointer;
+    border: none;
+    color: $color-white;
+    text-transform: uppercase;
+    border-radius: 1px;
+    width: 32.9%;
+}
+ a {
+    text-decoration: none;
+ }
+  
+  .action__button:hover {
+    cursor: pointer;
+  }
+
+  .action__button--full{
+    width: 100%;
+  }
+  
+  
+  .action__button--save {
+    background-color: $color-success-dark;
+    align-self: start;
+    margin-left: 1px;
+  }
+   
+  .action__button--clear {
+    background-color: $color-danger-dark;
+    justify-self: end;
+    margin-right: 1px;
+  }
+  
+  .action__button--create {
+    background-color: $color-secondary;
+    align-self: start;
+    margin-left: 1px;
+  }

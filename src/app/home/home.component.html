@@ -1,3 +1,20 @@
-<p>
-  home works!
-</p>
+<div class="home-container">
+  <div class="home__left-pane">
+    <button (click)="activateFlightPlan()" *ngIf="this.flightPoints.length == 0" class="action__button action__button--full action__button--create">
+        <i class="fas fa-plus"></i>
+    </button>
+    <button *ngIf="this.flightPoints.length > 0" class="action__button action__button--save">
+        <i class="fas fa-check-double"></i>
+    </button>
+    <button (click)="removeLastMarker()" *ngIf="flightPoints.length > 0" class="action__button action__button--clear">
+        <i class="fas fa-backspace"></i>
+    </button>
+    <button (click)="clearFlightPlan()" *ngIf="flightPoints.length > 0" class="action__button action__button--clear">
+        <i class="fas fa-minus-circle"></i>
+    </button>
+<!-- LIST of Flight plans -->
+  </div>
+  <div class="home__right-pane">
+      <div #map id="map"></div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+.flex__col {
+    display: flex;
+    flex-direction: column;
+}
+.align__center {
+    align-items: center;
+}
+.justify__between {
+    justify-content: space-between;
+}
+
+.middle-pane {
+    flex: 1 1 auto;
+    height: 100vh;
+}
+
+.header__wrap, .footer__wrap {
+    height: $sidebar-size;
+    background: $color-primary;
+}
+
+.content__main {
+    height: calc(100vh - 240px); // TO DO: rewrite this to be dynamic - set the height of content-main relative to the viewport-header-footer
+    overflow: hidden;
+}
+
+
+.robot__tab__content .fieldset__item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.robot__fieldset .fieldset__item {
+    min-height: 300px;
+}
