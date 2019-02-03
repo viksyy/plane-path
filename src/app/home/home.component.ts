@@ -16,16 +16,14 @@ export class HomeComponent implements OnInit {
   flightMarkers: any = [];
   flightPoints: any = [];
   flightPath: any = [];
-  // infoWindow = null;
+  flightStoredList: any = [];
   constructor() { }
 
   ngOnInit() {
     this.lat = 41.996533;
     this.lng = 21.433269;
-    // this.infoWindow = new google.maps.InfoWindow;
     this.loadMap();
-
-
+    this.flightStoredList = ["aa","ss"]
   }
 
   findMyCoordinates() {
@@ -102,9 +100,6 @@ export class HomeComponent implements OnInit {
       ]
     }
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-    // this.drawPath();
-    // this.findMyCoordinates();
-
   }
   placeMarker(location) {
     var marker = new google.maps.Marker({
@@ -122,7 +117,7 @@ export class HomeComponent implements OnInit {
     });
     this.flightMarkers.push(marker);
     this.flightPoints.push({ lat: location.lat(), lng: location.lng() })
-    this.flightPath.getPath().setAt( this.flightMarkers.length - 1, location);
+    this.flightPath.getPath().setAt(this.flightMarkers.length - 1, location);
   }
 
   drawPath() {
@@ -160,8 +155,7 @@ export class HomeComponent implements OnInit {
 
 
   removeLastMarker() {
-    console.log(this.flightMarkers);
-    if(this.flightMarkers.length == 1){
+    if (this.flightMarkers.length == 1) {
       this.clearFlightPlan();
       return;
     }
