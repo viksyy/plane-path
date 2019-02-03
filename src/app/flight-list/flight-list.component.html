@@ -2,7 +2,6 @@
     <h3>List of planned flights</h3>
     <mat-card *ngFor="let it of items; let i=index" [class.active]="it.clicked" class="flight__item" (click)="clickAction(i, it.listOfPoints)">
             <mat-card-title>{{it.title}}</mat-card-title>
-            <!-- <mat-card-content>The best filght plan </mat-card-content> -->
             <mat-card-footer>{{it.date}}</mat-card-footer>
     </mat-card>
 </div>

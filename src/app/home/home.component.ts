@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   constructor(public dialog: MatDialog, public snackbar: MatSnackBar) { }
 
   ngOnInit() {
-    if(window.innerWidth > 414){
+    if (window.innerWidth > 414) {
       this.isMobile = false;
     }
     this.lat = 41.996533;
@@ -63,22 +63,6 @@ export class HomeComponent implements OnInit {
       { lat: 44.81805467255284, lng: 20.49829400607541 },
       { lat: 44.84167278051555, lng: 20.410060058321505 }])
     ]
-  }
-
-  findMyCoordinates() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        // var pos = {
-        // lat: position.coords.latitude,
-        // lng: position.coords.longitude
-        // };
-
-        // this.map.setCenter(pos);
-      }, function () {
-      });
-    } else {
-
-    }
   }
 
 
@@ -180,7 +164,7 @@ export class HomeComponent implements OnInit {
     });
     this.map.setOptions({ draggableCursor: 'crosshair' })
     this.snackBarOpen("You can now click on map to insert the points!", "Close");
-    if(this.isMobile){
+    if (this.isMobile) {
       this.closeMobileMenu();
     }
   }
@@ -197,13 +181,6 @@ export class HomeComponent implements OnInit {
     google.maps.event.clearListeners(this.map, 'click');
     this.map.setOptions({ draggableCursor: 'pointer' })
     this.snackBarOpen("The map is clear!", "Close");
-    // if(this.insertedFlight){
-    //   for (let i = 0; i < this.flightStoredList.length; i++) {
-    //     this.flightStoredList[i].clicked = false;
-    //   }
-    //   this.insertedFlight = false;
-    // }
-
   }
 
 
@@ -277,7 +254,7 @@ export class HomeComponent implements OnInit {
     }
 
     this.extendMapByBounds(pathList);
-    if(this.isMobile){
+    if (this.isMobile) {
       this.closeMobileMenu();
     }
   }
@@ -326,16 +303,7 @@ export class HomeComponent implements OnInit {
     var bounds = new google.maps.LatLngBounds();
     listOfPoints.forEach(function (p) {
       let point = new google.maps.LatLng(p.lat, p.lng);
-      // if (!point.geometry) {
-      // return;
-      // }
-
-      // if (point.geometry.viewport) {
-      // Only geocodes have viewport.
-      // bounds.union(point.geometry.viewport);
-      // } else {
       bounds.extend(point);
-      // }
     });
     this.map.fitBounds(bounds);
   }
@@ -350,13 +318,13 @@ export class HomeComponent implements OnInit {
   }
 
 
-  openMobileMenu(){
+  openMobileMenu() {
     (<HTMLElement>document.getElementsByClassName("home__left-pane")[0]).style.display = "block";
     (<HTMLElement>document.getElementsByClassName("home__left-pane")[0]).style.width = "100%";
     (<HTMLElement>document.getElementsByClassName("home__right-pane")[0]).style.display = "none";
   }
 
-  closeMobileMenu(){
+  closeMobileMenu() {
     (<HTMLElement>document.getElementsByClassName("home__left-pane")[0]).style.display = "none";
     (<HTMLElement>document.getElementsByClassName("home__right-pane")[0]).style.width = "100%";
     (<HTMLElement>document.getElementsByClassName("home__right-pane")[0]).style.display = "block";

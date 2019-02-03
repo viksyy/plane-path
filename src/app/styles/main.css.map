@@ -5,10 +5,7 @@
         "main.scss",
         "_normalize.scss",
         "_variables.scss",
-        "_mixins.scss",
         "_layout.scss",
-        "_typography.scss",
-        "_utility.scss",
         "_buttons.scss"
     ],
     "names": [],
