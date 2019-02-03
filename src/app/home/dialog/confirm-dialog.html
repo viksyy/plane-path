@@ -1,0 +1,9 @@
+<div mat-dialog-content>
+  <p>What's the flight plan name ?</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.flightName">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.flightName" cdkFocusInitial>Ok</button>
+</div>

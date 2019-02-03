@@ -18,9 +18,21 @@ export class FlightListComponent implements OnInit {
 
     }
 
-    clickAction(id: number, api: any) {
-        alert(api);
-        this.items[id].clicked = !this.items[id].clicked;
-        this.clickEmitter.emit(this.items[id].id);
+    clickAction(id: number, listOfPoints: any) {
+
+        for (let i = 0; i < this.items.length; i++) {
+            if (i == id) {
+                if (this.items[i].clicked == false) {
+                    this.items[i].clicked = true;
+                    this.clickEmitter.emit(this.items[i]);
+                }
+            }
+            else {
+                this.items[i].clicked = false;
+            }
+
+        }
+        
+
     }
 }

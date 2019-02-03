@@ -6,7 +6,7 @@
     color: $color-white;
     text-transform: uppercase;
     border-radius: 1px;
-    width: 32.9%;
+    width: 15%;
 }
  a {
     text-decoration: none;
@@ -16,31 +16,38 @@
     cursor: pointer;
   }
 
-  .action__button--full{
-    width: 100%;
-  }
-  
-  
-  .action__button--save {
-    background-color: $color-success-dark;
+  .action__button{
     align-self: start;
     margin-left: 1px;
+    color: $color-white;
+    margin: 2px !important;
+  }
+
+  .action__button--full{
+    width: 90%;
+  }
+
+  .action__button--add {    
+    background-color: $color-secondary;
+  }
+  .action__button--save {
+    background-color: $color-white;
+    color: $color-black;
+    border: 1px solid $color-success-dark;
+  }
+
+  .action__button--saveas {
+    background-color: $color-success-dark;
+  }
+  
+  .action__button--removelast {
+    background-color: $color-warning-dark;
   }
    
-  .action__button--clear {
+  .action__button--clearall {
     background-color: $color-danger-dark;
-    justify-self: end;
-    margin-right: 1px;
-  }
-  
-  .action__button--create {
-    background-color: $color-secondary;
-    align-self: start;
-    margin-left: 1px;
   }
   
   .action__button--list {
     background-color: $color-neutral-2;
-    align-self: start;
-    margin-left: 1px;
   }

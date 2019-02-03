@@ -1,7 +1,8 @@
-<div class="flex flex__col">
-    <button *ngFor="let it of items; let i=index" class="action__button action__button--list action__button--full">
-            {{i}}
-    </button>
+<div class="flex flex__col flight__list">
+    <h3>List of planned flights</h3>
+    <mat-card *ngFor="let it of items; let i=index" [class.active]="it.clicked" class="flight__item" (click)="clickAction(i, it.listOfPoints)">
+            <mat-card-title>{{it.title}}</mat-card-title>
+            <!-- <mat-card-content>The best filght plan </mat-card-content> -->
+            <mat-card-footer>{{it.date}}</mat-card-footer>
+    </mat-card>
 </div>
-
-
