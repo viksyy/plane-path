@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { WelcomeRoutingModule } from "./welcome-routing.module";
 import { WelcomeComponent } from './welcome.component';
+import { MatCardModule, MatButtonModule } from '@angular/material';
 
 
 @NgModule({
@@ -9,7 +10,9 @@ import { WelcomeComponent } from './welcome.component';
     WelcomeComponent
   ],
   imports: [
-    WelcomeRoutingModule
+    WelcomeRoutingModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: []
 })
